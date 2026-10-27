@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SporoCare — Meu gato tem esporotricose, e agora?</title>
+  <meta name="description" content="SporoCare: guia educativo para tutores de gatos com esporotricose. Orientações práticas sobre cuidados, lesões, medicação, contenção e isolamento.">
+  <meta name="theme-color" content="#faf6ee">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/1.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== Ícones (SVG inline, estilo de traço único) ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.500 15.400 12 20 12 20Z"/><path d="M12 10.500v4M10 12.500h4"/></symbol>
+    <symbol id="i-bandage" viewBox="0 0 24 24"><rect x="2.500" y="8.500" width="19" height="7" rx="3.500" transform="rotate(-35 12 12)"/><path d="M10.200 10.200h.01M13.800 13.800h.01M13.800 10.200h.01M10.200 13.800h.01"/></symbol>
+    <symbol id="i-pill" viewBox="0 0 24 24"><rect x="2.500" y="8.500" width="19" height="7" rx="3.500" transform="rotate(-45 12 12)"/><path d="m8.500 8.500 7 7"/></symbol>
+    <symbol id="i-towel" viewBox="0 0 24 24"><path d="M5 4h14v12a4 4 0 0 1-4 4H5V4Z"/><path d="M5 9h14M5 14h10"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-7.500 9 7.500"/><path d="M5.500 9.500V20h13V9.500"/><path d="M10 20v-5.500h4V20"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3.500 2.800 19.500h18.400L12 3.500Z"/><path d="M12 10v4.500M12 17.300h.01"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5.500M12 7.700h.01"/></symbol>
+    <symbol id="i-glove" viewBox="0 0 24 24"><path d="M7 21v-4.500L4.500 12a1.500 1.500 0 0 1 2.500-1.600L8.500 12V5a1.500 1.500 0 0 1 3 0v4.500V4a1.500 1.500 0 0 1 3 0v5.500V5a1.500 1.500 0 0 1 3 0v6.500V8.500a1.500 1.500 0 0 1 3 0V15a6 6 0 0 1-6 6H7Z"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 3.500s6 6.200 6 10.500a6 6 0 0 1-12 0c0-4.300 6-10.500 6-10.500Z"/><path d="M9.500 14.500a2.500 2.500 0 0 0 2.500 2.500"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="m3 7.500 9-4.500 9 4.500v9L12 21l-9-4.500v-9Z"/><path d="m3 7.500 9 4.500 9-4.500M12 12v9"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.500 4.500 4.500L19 7.500"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></symbol>
+    <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.500v13l11-6.500L8 5.500Z"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l1.500-2.500h7L17 8h3v11H4V8Z"/><circle cx="12" cy="13" r="3.500"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5.500A1.500 1.500 0 0 1 5.500 4H11v16H5.500A1.500 1.500 0 0 1 4 18.500v-13ZM20 5.500A1.500 1.500 0 0 0 18.500 4H13v16h5.500a1.500 1.500 0 0 0 1.500-1.500v-13Z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-news" viewBox="0 0 24 24"><path d="M4 5h13v14H6a2 2 0 0 1-2-2V5Z"/><path d="M17 9h3v8a2 2 0 0 1-2 2h-1"/><path d="M7.500 9h6M7.500 12.500h6M7.500 16h3.500"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5.500A1.500 1.500 0 0 1 5.500 4h13A1.500 1.500 0 0 1 20 5.500v9a1.500 1.500 0 0 1-1.500 1.500H10l-4 4v-4H5.500A1.500 1.500 0 0 1 4 14.500v-9Z"/><path d="M8 9h8M8 12h5"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 3.500h12a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-15a1 1 0 0 1 1-1Z"/><path d="M11 17.500h2"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+<!-- ===== Cabeçalho ===== -->
+<header class="site-header" id="topo">
+  <div class="container site-header__inner">
+    <a class="brand" href="#inicio" aria-label="SporoCare — ir para o início">
+      <!-- Logo original (assets/logo/1.svg). Apenas o enquadramento é ajustado via CSS; o arquivo não é alterado. -->
+      <span class="brand__crop"><img src="assets/logo/1.svg" alt="SporoCare" width="1500" height="1500"></span>
+    </a>
+
+    <nav class="nav" id="menu-principal" aria-label="Seções principais">
+      <ul class="nav__list">
+        <li><a href="#inicio" data-spy="inicio">Início</a></li>
+        <li><a href="#cuidados" data-spy="cuidados">Cuidados</a></li>
+        <li><a href="#lesoes" data-spy="lesoes">Lesões</a></li>
+        <li><a href="#medicacao" data-spy="medicacao">Medicação</a></li>
+        <li><a href="#contencao" data-spy="contencao">Contenção</a></li>
+        <li><a href="#isolamento" data-spy="isolamento">Isolamento</a></li>
+        <li><a href="#quem-somos" data-spy="quem-somos">Quem nós somos</a></li>
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menu">
+      <svg class="icon icon--open" aria-hidden="true"><use href="#i-menu"/></svg>
+      <svg class="icon icon--close" aria-hidden="true"><use href="#i-x"/></svg>
+    </button>
+  </div>
+  <div class="read-progress" aria-hidden="true"><span id="read-progress-bar"></span></div>
+</header>
+
+<main id="conteudo">
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <p class="eyebrow">GUIA EDUCATIVO PARA TUTORES</p>
+        <h1 id="hero-titulo">MEU GATO TEM ESPOROTRICOSE, E AGORA?</h1>
+        <p class="hero__lead">Orientações práticas para você cuidar do seu animal com mais segurança, reduzir riscos em casa e acompanhar o tratamento com tranquilidade.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#comecar">EXPLORAR O GUIA</a>
+          <a class="btn btn--ghost" href="#cuidados">CONHECER OS CUIDADOS</a>
+        </div>
+      </div>
+      <figure class="hero__figure">
+        <img src="assets/img/hero-site-sporocare-4.svg" width="756" height="780" fetchpriority="high" decoding="async"
+             alt="Veterinária de jaleco e luvas examina um gato preto ao lado da caixa de transporte, enquanto a tutora observa com atenção.">
+        <figcaption class="credit">Imagem: Canva AI. Acompanhamento veterinário de um gato, criada para a SporoCare, 2026. Referência visual baseada na identidade fornecida pela SporoCare.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== Aviso importante ===== -->
+  <div class="container">
+    <aside class="notice" aria-labelledby="aviso-titulo">
+      <svg class="icon notice__icon" aria-hidden="true"><use href="#i-info"/></svg>
+      <div>
+        <h2 class="notice__title" id="aviso-titulo">Importante</h2>
+        <p>Este guia tem finalidade educativa e não substitui avaliação, prescrição ou acompanhamento do médico-veterinário. Não altere doses, medicamentos, curativos ou tempo de isolamento sem orientação profissional.</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- ===== Por que este guia existe ===== -->
+  <section class="section" id="por-que" aria-labelledby="por-que-titulo">
+    <div class="container why">
+      <div class="why__text">
+        <span class="badge"><svg class="icon" aria-hidden="true"><use href="#i-book"/></svg>Baseado em diretrizes científicas</span>
+        <h2 id="por-que-titulo">Por que este guia existe?</h2>
+        <p class="section__sub">Informação acessível também faz parte do cuidado.</p>
+        <p class="why__body">Estudos brasileiros apontam conhecimento parcial da população sobre zoonoses transmitidas por gatos, especialmente a esporotricose. Por isso, este projeto transforma informações científicas em orientações práticas para o tutor.</p>
+        <p class="source">Fonte: Rodrigues, Malta &amp; Ferro (2017), Fiocruz.</p>
+        <p class="why__more">Cuidar de um gato com esporotricose envolve rotina, atenção e medidas de biossegurança em casa. Nosso objetivo é ajudar você a compreender esses cuidados com linguagem clara e acolhedora. O conteúdo é educativo e não substitui a avaliação do médico-veterinário, que define a conduta para cada animal.</p>
+      </div>
+      <!-- Notícias sobre esporotricose (links externos; sem imagens de terceiros) -->
+      <aside class="news" aria-labelledby="noticias-titulo">
+        <h3 class="news__title" id="noticias-titulo">Esporotricose nas notícias</h3>
+        <p class="news__sub">Reportagens sobre o tema em Campinas e região.</p>
+        <article class="news-card">
+          <p class="news-card__meta"><span class="news-card__source"><svg class="icon" aria-hidden="true"><use href="#i-news"/></svg>G1 Campinas e região</span><time datetime="2023-11-24">24 de novembro de 2023</time></p>
+          <h4 class="news-card__headline">Campinas tem alta de esporotricose em gatos: entenda por que felinos são vítimas e como protegê-los</h4>
+          <a class="news-card__link" href="https://g1.globo.com/sp/campinas-regiao/noticia/2023/11/24/campinas-tem-alta-de-esporotricose-em-gatos-entenda-por-que-felinos-sao-vitimas-e-como-protege-los.ghtml" target="_blank" rel="noopener noreferrer">Ler notícia completa<svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg><span class="visually-hidden"> (abre em nova aba): Campinas tem alta de esporotricose em gatos: entenda por que felinos são vítimas e como protegê-los</span></a>
+        </article>
+        <article class="news-card">
+          <p class="news-card__meta"><span class="news-card__source"><svg class="icon" aria-hidden="true"><use href="#i-news"/></svg>G1 Campinas e região</span><time datetime="2026-08-08">8 de agosto de 2026</time></p>
+          <h4 class="news-card__headline">Sumaré concentra metade dos casos de esporotricose na região de Campinas em 2026; veja sintomas e como prevenir</h4>
+          <a class="news-card__link" href="https://g1.globo.com/sp/campinas-regiao/noticia/2026/08/08/sumare-concentra-metade-dos-casos-de-esporotricose-na-regiao-de-campinas-em-2026-veja-sintomas-e-como-prevenir.ghtml" target="_blank" rel="noopener noreferrer">Ler notícia completa<svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg><span class="visually-hidden"> (abre em nova aba): Sumaré concentra metade dos casos de esporotricose na região de Campinas em 2026; veja sintomas e como prevenir</span></a>
+        </article>
+        <article class="news-card">
+          <p class="news-card__meta"><span class="news-card__source"><svg class="icon" aria-hidden="true"><use href="#i-news"/></svg>Tribuna Liberal</span></p>
+          <h4 class="news-card__headline">Avanço elevado da esporotricose põe Sumaré no centro de alerta regional</h4>
+          <a class="news-card__link" href="https://www.tribunaliberal.com.br/saude/Avanco-elevado-da-esporotricose-poe-Sumare-no-centro-de-alerta-regional" target="_blank" rel="noopener noreferrer">Ler notícia completa<svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg><span class="visually-hidden"> (abre em nova aba): Avanço elevado da esporotricose põe Sumaré no centro de alerta regional</span></a>
+        </article>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== Escolha por onde começar ===== -->
+  <section class="section section--tint" id="comecar" aria-labelledby="comecar-titulo">
+    <div class="container">
+      <header class="section__head section__head--center">
+        <h2 id="comecar-titulo">Escolha por onde começar</h2>
+        <p class="section__sub">Seis passos para organizar o cuidado em casa. Você pode seguir a ordem ou ir direto ao que precisa agora.</p>
+      </header>
+      <ul class="cards">
+        <li><a class="card" href="#cuidados">
+          <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg></span>
+          <span class="card__num">01</span>
+          <h3>Cuidados</h3>
+          <p>Proteja você e sua família durante o manejo do gato.</p>
+          <span class="card__go">Ver seção <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a></li>
+        <li><a class="card" href="#lesoes">
+          <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-bandage"/></svg></span>
+          <span class="card__num">02</span>
+          <h3>Manejo de lesões</h3>
+          <p>O que fazer e o que evitar ao cuidar da ferida.</p>
+          <span class="card__go">Ver seção <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a></li>
+        <li><a class="card" href="#medicacao">
+          <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-pill"/></svg></span>
+          <span class="card__num">03</span>
+          <h3>Administração de medicações</h3>
+          <p>Regularidade e atenção para o tratamento dar certo.</p>
+          <span class="card__go">Ver seção <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a></li>
+        <li><a class="card" href="#contencao">
+          <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-towel"/></svg></span>
+          <span class="card__num">04</span>
+          <h3>Contenção segura</h3>
+          <p>Menos estresse para o animal e mais segurança para você.</p>
+          <span class="card__go">Ver seção <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a></li>
+        <li><a class="card" href="#isolamento">
+          <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg></span>
+          <span class="card__num">05</span>
+          <h3>Isolamento domiciliar</h3>
+          <p>Como preparar um espaço exclusivo para o seu gato.</p>
+          <span class="card__go">Ver seção <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a></li>
+        <li><a class="card card--alert" href="#alertas">
+          <span class="card__icon"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg></span>
+          <span class="card__num">06</span>
+          <h3>Sinais de alerta</h3>
+          <p>Quando parar e procurar o veterinário.</p>
+          <span class="card__go">Ver seção <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Cuidados / Biossegurança ===== -->
+  <section class="section topic" id="cuidados" aria-labelledby="cuidados-titulo">
+    <div class="container topic__grid">
+      <figure class="topic__figure">
+        <img src="assets/img/hero-site-sporocare-1.svg" width="948" height="948" loading="lazy" decoding="async"
+             alt="Tutora de máscara, avental e luvas higieniza uma bancada, com spray, panos e materiais organizados em uma bandeja; ao fundo, um gato descansa.">
+        <figcaption class="credit">CANVA. Biossegurança em casa. Imagem gerada com auxílio de inteligência artificial para a SporoCare. Canva, 2026.</figcaption>
+      </figure>
+      <div class="topic__body">
+        <p class="eyebrow">Cuidados · Biossegurança em casa</p>
+        <h2 id="cuidados-titulo">Proteja você e o seu gato</h2>
+        <p class="topic__lead">O contato com gatos infectados é uma importante via de transmissão zoonótica da esporotricose. Durante o manejo de animais suspeitos ou diagnosticados, devem ser adotadas medidas de proteção.</p>
+
+        <ul class="highlights">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-glove"/></svg><span>Luvas</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-drop"/></svg><span>Lavar as mãos</span></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-box"/></svg><span>Materiais separados</span></li>
+        </ul>
+
+        <div class="checklist" data-checklist="biosseguranca" data-unit="hábitos">
+          <h3 class="checklist__title" id="chk-bio-titulo">Checklist de cinco hábitos</h3>
+          <ul class="checklist__list" aria-labelledby="chk-bio-titulo">
+            <li><label><input type="checkbox"><span class="checklist__box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span><span>Use luvas quando houver contato com lesões, secreções ou materiais potencialmente contaminados.</span></label></li>
+            <li><label><input type="checkbox"><span class="checklist__box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span><span>Evite tocar o rosto durante o manejo e lave bem as mãos após retirar as luvas.</span></label></li>
+            <li><label><input type="checkbox"><span class="checklist__box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span><span>Evite mordidas, arranhaduras e contato direto com áreas lesionadas.</span></label></li>
+            <li><label><input type="checkbox"><span class="checklist__box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span><span>Mantenha os materiais usados no cuidado do animal separados dos demais itens da casa.</span></label></li>
+            <li><label><input type="checkbox"><span class="checklist__box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span><span>Se ocorrer mordida ou arranhadura, procure orientação de um serviço de saúde.</span></label></li>
+          </ul>
+          <div class="checklist__footer">
+            <div class="meter" aria-hidden="true"><span class="meter__bar"></span></div>
+            <p class="checklist__progress" aria-live="polite"></p>
+          </div>
+        </div>
+        <p class="refs">Referências: Lloret et al. (2013); Gremião et al. (2021); Montenegro et al. (2014). <a href="#referencias">Ver lista</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Lesões ===== -->
+  <section class="section section--warm topic topic--reverse" id="lesoes" aria-labelledby="lesoes-titulo">
+    <div class="container topic__grid">
+      <figure class="topic__figure">
+        <img src="assets/img/hero-site-sporocare-2.svg" width="864" height="864" loading="lazy" decoding="async"
+             alt="Close do rosto de um gato branco e caramelo com uma lesão avermelhada no focinho, sendo segurado com cuidado por mãos enluvadas.">
+        <figcaption class="credit">CANVA. Lesão felina para orientação. Imagem gerada com auxílio de inteligência artificial, a partir de imagem de referência fornecida pelo usuário, para o site SporoCare. 2026.</figcaption>
+      </figure>
+      <div class="topic__body">
+        <p class="eyebrow">Lesões · Manejo das lesões</p>
+        <h2 id="lesoes-titulo">Cuide da ferida sem improvisar</h2>
+        <p class="topic__lead">As lesões da esporotricose podem apresentar ulceração e secreção. O manejo deve seguir exatamente a orientação do veterinário responsável.</p>
+
+        <div class="dodont">
+          <section class="dodont__col dodont__col--do" aria-labelledby="faca-titulo">
+            <h3 id="faca-titulo"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Faça</h3>
+            <ul>
+              <li>Use os materiais e produtos indicados pelo veterinário.</li>
+              <li>Mantenha o ambiente organizado e use luvas.</li>
+              <li>Observe as lesões e relate qualquer mudança ao veterinário.</li>
+            </ul>
+          </section>
+          <section class="dodont__col dodont__col--dont" aria-labelledby="nao-faca-titulo">
+            <h3 id="nao-faca-titulo"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Não faça</h3>
+            <ul>
+              <li>Não aplique produtos caseiros, pomadas ou antissépticos por conta própria.</li>
+              <li>Não remova crostas nem esprema lesões.</li>
+              <li>Não mude a frequência de limpeza sem orientação.</li>
+            </ul>
+          </section>
+        </div>
+
+        <p class="callout"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg><span><strong>Importante:</strong> não tente remover crostas, espremer lesões ou modificar a frequência de limpeza sem orientação profissional.</span></p>
+        <p class="refs">Referências: Gremião et al. (2021); Lloret et al. (2013). <a href="#referencias">Ver lista</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Medicação ===== -->
+  <section class="section topic" id="medicacao" aria-labelledby="medicacao-titulo">
+    <div class="container topic__grid">
+      <figure class="topic__figure">
+        <img src="assets/img/hero-site-sporocare-3.svg" width="864" height="864" loading="lazy" decoding="async"
+             alt="Tutora de blusa verde administra um comprimido a um gato deitado sobre a mesa, ao lado de embalagens de medicamento.">
+        <figcaption class="credit">CANVA. Gato tomando comprimido. Imagem gerada com auxílio de inteligência artificial para o site SporoCare. Canva, 2026.</figcaption>
+      </figure>
+      <div class="topic__body">
+        <p class="eyebrow">Medicação</p>
+        <h2 id="medicacao-titulo">O tratamento precisa de regularidade</h2>
+        <p class="topic__lead">A adesão do tutor ao tratamento é um dos fatores importantes para o sucesso terapêutico. O medicamento, a dose, o intervalo e a duração devem ser definidos pelo médico-veterinário.</p>
+        <p class="pull">Siga a prescrição veterinária e não interrompa o tratamento sem orientação, mesmo que o gato pareça melhor.</p>
+
+        <ol class="steps">
+          <li><h3>Siga a prescrição</h3><p>Administre exatamente como foi orientado.</p></li>
+          <li><h3>Facilite a rotina</h3><p>Use alarmes e mantenha um registro dos horários.</p></li>
+          <li><h3>Observe o animal</h3><p>Se notar reação inesperada, entre em contato com o veterinário.</p></li>
+          <li><h3>Não interrompa sozinho</h3><p>Mesmo que as lesões melhorem, não pare o tratamento sem orientação.</p></li>
+        </ol>
+
+        <p class="callout callout--soft"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span><strong>Se o gato cuspir ou vomitar a medicação:</strong> não repita a dose por conta própria. Entre em contato com o veterinário para saber como proceder.</span></p>
+        <p class="refs">Referências: Lloret et al. (2013); Gremião et al. (2021). <a href="#referencias">Ver lista</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contenção ===== -->
+  <section class="section section--warm topic topic--reverse" id="contencao" aria-labelledby="contencao-titulo">
+    <div class="container topic__grid">
+      <figure class="topic__figure">
+        <img src="assets/img/gor.svg" width="756" height="780" loading="lazy" decoding="async"
+             alt="Gato preto envolto em uma toalha verde, seguro com cuidado por uma pessoa de uniforme azul-petróleo e luvas descartáveis azuis.">
+        <figcaption class="credit">CANVA. Contenção do gato com toalha e luvas descartáveis. Imagem gerada e editada com auxílio de inteligência artificial, a partir de imagem de referência fornecida pelo usuário, para o site SporoCare. Canva, 2026.</figcaption>
+      </figure>
+      <div class="topic__body">
+        <p class="eyebrow">Contenção</p>
+        <h2 id="contencao-titulo">Menos estresse, mais segurança</h2>
+        <p class="topic__lead">Quando o veterinário orientar a manipulação em casa, um cobertor ou toalha pode ajudar a limitar movimentos e proteger o tutor e o animal.</p>
+
+        <div class="checklist" data-checklist="contencao" data-unit="boas práticas" data-marked="marcadas">
+          <h3 class="checklist__title" id="chk-con-titulo">Checklist de quatro práticas</h3>
+          <ul class="checklist__list" aria-labelledby="chk-con-titulo">
+            <li><label><input type="checkbox"><span class="checklist__box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span><span>Use um cobertor limpo e reservado para aquele animal.</span></label></li>
+            <li><label><input type="checkbox"><span class="checklist__box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span><span>Faça movimentos calmos, sem apertar o tórax ou dificultar a respiração.</span></label></li>
+            <li><label><input type="checkbox"><span class="checklist__box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span><span>Evite perseguições pela casa: prepare o ambiente antes de iniciar.</span></label></li>
+            <li><label><input type="checkbox"><span class="checklist__box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span><span>Se o animal ficar muito agitado, pare e peça orientação ao veterinário.</span></label></li>
+          </ul>
+          <div class="checklist__footer">
+            <div class="meter" aria-hidden="true"><span class="meter__bar"></span></div>
+            <p class="checklist__progress" aria-live="polite"></p>
+          </div>
+        </div>
+        <p class="refs">Referências: Lloret et al. (2013); Gremião et al. (2021). <a href="#referencias">Ver lista</a></p>
+      </div>
+    </div>
+
+    <div class="container videos" aria-labelledby="videos-titulo">
+      <h3 id="videos-titulo">Vídeos educativos sobre contenção e manejo</h3>
+      <p class="videos__note">Materiais de terceiros hospedados no YouTube. Eles complementam, mas não substituem, as orientações escritas acima nem a conduta indicada pelo seu veterinário.</p>
+      <ul class="videos__grid">
+        <li class="video" data-video-id="YY4iHgkJULE">
+          <button class="video__play" type="button" aria-label="Reproduzir Vídeo de orientação 1">
+            <img src="https://i.ytimg.com/vi/YY4iHgkJULE/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+            <span class="video__badge"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span>
+          </button>
+          <div class="video__meta">
+            <h4>Vídeo de orientação 1</h4>
+            <a href="https://www.youtube.com/watch?v=YY4iHgkJULE" target="_blank" rel="noopener noreferrer">Assistir no YouTube <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg></a>
+          </div>
+        </li>
+        <li class="video" data-video-id="n8OvFDTyzp0">
+          <button class="video__play" type="button" aria-label="Reproduzir Vídeo de orientação 2">
+            <img src="https://i.ytimg.com/vi/n8OvFDTyzp0/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+            <span class="video__badge"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span>
+          </button>
+          <div class="video__meta">
+            <h4>Vídeo de orientação 2</h4>
+            <a href="https://www.youtube.com/watch?v=n8OvFDTyzp0" target="_blank" rel="noopener noreferrer">Assistir no YouTube <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg></a>
+          </div>
+        </li>
+        <li class="video" data-video-id="4RrtGixIpyk">
+          <button class="video__play" type="button" aria-label="Reproduzir Vídeo de orientação 3">
+            <img src="https://i.ytimg.com/vi/4RrtGixIpyk/hqdefault.jpg" alt="" width="480" height="360" loading="lazy" decoding="async">
+            <span class="video__badge"><svg class="icon" aria-hidden="true"><use href="#i-play"/></svg></span>
+          </button>
+          <div class="video__meta">
+            <h4>Vídeo de orientação 3</h4>
+            <a href="https://www.youtube.com/watch?v=4RrtGixIpyk" target="_blank" rel="noopener noreferrer">Assistir no YouTube <svg class="icon" aria-hidden="true"><use href="#i-ext"/></svg></a>
+          </div>
+        </li>
+      </ul>
+      <p class="videos__fallback">Se o vídeo não carregar aqui (a incorporação pode ser bloqueada pelo YouTube ou pelo ambiente em que o site é aberto), use o link “Assistir no YouTube” abaixo de cada vídeo.</p>
+      <p class="refs">Referências de manejo: Lloret et al. (2013); Gremião et al. (2021). <a href="#referencias">Ver lista</a></p>
+    </div>
+  </section>
+
+  <!-- ===== Isolamento ===== -->
+  <section class="section topic" id="isolamento" aria-labelledby="isolamento-titulo">
+    <div class="container topic__grid">
+      <figure class="topic__figure">
+        <img src="assets/img/k.svg" width="756" height="780" loading="lazy" decoding="async"
+             alt="Gato com colar elizabetano deitado em uma caminha em um cômodo tranquilo, com tigelas de água e ração, caixa de areia e materiais de tratamento organizados ao lado.">
+        <figcaption class="credit">CANVA. Gato doente em isolamento e tratamento. Imagem gerada e editada com auxílio de inteligência artificial para o site SporoCare. Canva, 2026.</figcaption>
+      </figure>
+      <div class="topic__body">
+        <p class="eyebrow">Isolamento domiciliar</p>
+        <h2 id="isolamento-titulo">Prepare um espaço exclusivo</h2>
+        <p class="topic__lead">O isolamento ajuda a reduzir oportunidades de contato do animal infectado com pessoas e outros animais. O período e as condições do isolamento devem ser definidos pelo veterinário.</p>
+
+        <div class="checklist" data-checklist="isolamento" data-unit="cuidados">
+          <h3 class="checklist__title" id="chk-iso-titulo">Checklist de cinco cuidados</h3>
+          <ul class="checklist__list" aria-labelledby="chk-iso-titulo">
+            <li><label><input type="checkbox"><span class="checklist__box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span><span>Escolha um cômodo tranquilo, ventilado e de fácil limpeza.</span></label></li>
+            <li><label><input type="checkbox"><span class="checklist__box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span><span>Evite acesso a camas, sofás e outros locais difíceis de higienizar.</span></label></li>
+            <li><label><input type="checkbox"><span class="checklist__box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span><span>Mantenha objetos e materiais do gato organizados e separados.</span></label></li>
+            <li><label><input type="checkbox"><span class="checklist__box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span><span>Limite o acesso de outros animais e crianças ao local.</span></label></li>
+            <li><label><input type="checkbox"><span class="checklist__box" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span><span>Mantenha o espaço limpo conforme a orientação recebida.</span></label></li>
+          </ul>
+          <div class="checklist__footer">
+            <div class="meter" aria-hidden="true"><span class="meter__bar"></span></div>
+            <p class="checklist__progress" aria-live="polite"></p>
+          </div>
+        </div>
+        <p class="refs">Referências: Lloret et al. (2013); Gremião et al. (2021). <a href="#referencias">Ver lista</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Sinais de alerta ===== -->
+  <section class="section section--alert" id="alertas" aria-labelledby="alertas-titulo">
+    <div class="container alerts">
+      <!-- FOTO REAL 2 — consulta veterinária (proporção original da foto, sem recorte) -->
+      <figure class="photo-slot photo-slot--vet has-photo" data-photo="foto-02-sinais-de-alerta">
+        <img src="assets/photos/consulta-veterinaria.png" width="1008" height="1040" loading="lazy" decoding="async" alt="Veterinária de uniforme azul-marinho segura um gato malhado sobre a mesa de atendimento e conversa com a tutora.">
+      </figure>
+      <div class="alerts__body">
+        <p class="eyebrow eyebrow--alert">Sinais de alerta</p>
+        <h2 id="alertas-titulo">Quando procurar ajuda</h2>
+        <p class="section__sub">Não espere para tirar dúvidas importantes</p>
+        <p class="alerts__intro">Se você notar qualquer um dos sinais abaixo, pare a tentativa de manejo e entre em contato com o veterinário responsável.</p>
+        <ul class="signs">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>Piora ou aparecimento de novas lesões.</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>Reação inesperada após a medicação.</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>Dificuldade para administrar o tratamento.</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>Mordida ou arranhadura durante o manejo.</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg>Qualquer mudança importante no estado geral do animal.</li>
+        </ul>
+        <p class="alerts__health"><strong>Se ocorrer mordida ou arranhadura, procure também um serviço de saúde.</strong></p>
+        <p class="alerts__close">Em caso de dúvida, entre em contato com o médico-veterinário responsável.</p>
+        <p class="refs">Referências: Lloret et al. (2013); Gremião et al. (2021). <a href="#referencias">Ver lista</a></p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===== Quando procurar ajuda (acordeões) ===== -->
+  <section class="section" id="ajuda" aria-labelledby="ajuda-titulo">
+    <div class="container container--narrow">
+      <header class="section__head section__head--center">
+        <p class="eyebrow">Orientação ao tutor</p>
+        <h2 id="ajuda-titulo">Quando procurar ajuda</h2>
+        <p class="section__sub">Em caso de dúvida, fale com o médico-veterinário responsável.</p>
+      </header>
+      <div class="help">
+        <details class="help__item">
+          <summary><svg class="icon" aria-hidden="true"><use href="#i-bandage"/></svg><span>Feridas ou lesões suspeitas</span><svg class="icon help__chev" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <div class="help__content"><p>Lesões suspeitas, ou qualquer alteração nas lesões que já existem, devem ser avaliadas por um médico-veterinário. Não manipule, limpe ou trate as lesões por conta própria: siga apenas o que o profissional orientou.</p></div>
+        </details>
+        <details class="help__item">
+          <summary><svg class="icon" aria-hidden="true"><use href="#i-heart"/></svg><span>Mudanças no estado geral do animal</span><svg class="icon help__chev" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <div class="help__content"><p>Alterações preocupantes no comportamento, na alimentação ou no estado geral do gato justificam entrar em contato com o profissional responsável. Não é preciso tentar descobrir a causa: o veterinário fará a avaliação.</p></div>
+        </details>
+        <details class="help__item">
+          <summary><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Dúvidas durante o tratamento</span><svg class="icon help__chev" aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+          <div class="help__content"><p>Procure o médico-veterinário responsável sempre que tiver dúvidas sobre medicamentos, administração, curativos, isolamento, evolução do quadro ou outras condutas. Perguntar faz parte do cuidado.</p></div>
+        </details>
+      </div>
+      <p class="help__note">Esta seção orienta quando buscar o veterinário. Os sinais de alerta acima listam situações em que o manejo em casa deve ser interrompido.</p>
+    </div>
+  </section>
+
+  <!-- ===== Perguntas frequentes ===== -->
+  <section class="section" id="faq" aria-labelledby="faq-titulo">
+    <div class="container container--narrow">
+      <header class="section__head section__head--center">
+        <h2 id="faq-titulo">Perguntas frequentes</h2>
+        <p class="section__sub">Dúvidas comuns dos tutores</p>
+      </header>
+
+      <div class="accordion" data-accordion>
+        <div class="accordion__item">
+          <h3><button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-1" id="faq-1-btn"><span>A esporotricose pode passar do gato para mim?</span><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="accordion__panel" id="faq-1" role="region" aria-labelledby="faq-1-btn"><div><p>Sim. O contato com gatos infectados é uma importante via de transmissão zoonótica da esporotricose. Por isso, use luvas ao ter contato com lesões, secreções ou materiais potencialmente contaminados, evite mordidas e arranhaduras e lave bem as mãos depois. Se ocorrer mordida ou arranhadura, procure um serviço de saúde.</p></div></div>
+        </div>
+        <div class="accordion__item">
+          <h3><button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn"><span>Posso parar a medicação quando as lesões melhorarem?</span><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="accordion__panel" id="faq-2" role="region" aria-labelledby="faq-2-btn"><div><p>Não. Mesmo que as lesões melhorem, não interrompa o tratamento sem orientação do veterinário. O medicamento, a dose, o intervalo e a duração são definidos por ele.</p></div></div>
+        </div>
+        <div class="accordion__item">
+          <h3><button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn"><span>Posso passar pomada ou produto caseiro na ferida?</span><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="accordion__panel" id="faq-3" role="region" aria-labelledby="faq-3-btn"><div><p>Não. Não aplique produtos caseiros, pomadas ou antissépticos por conta própria. Use somente os materiais e produtos indicados pelo veterinário e relate qualquer mudança nas lesões.</p></div></div>
+        </div>
+        <div class="accordion__item">
+          <h3><button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn"><span>Meu gato cuspiu ou vomitou o remédio. Devo dar outra dose?</span><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="accordion__panel" id="faq-4" role="region" aria-labelledby="faq-4-btn"><div><p>Não repita a dose por conta própria. Entre em contato com o veterinário para saber como proceder.</p></div></div>
+        </div>
+        <div class="accordion__item">
+          <h3><button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn"><span>Por quanto tempo meu gato precisa ficar isolado?</span><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="accordion__panel" id="faq-5" role="region" aria-labelledby="faq-5-btn"><div><p>Este guia não define um prazo. O período e as condições do isolamento devem ser estabelecidos pelo veterinário responsável pelo caso, e não devem ser alterados sem a orientação dele.</p></div></div>
+        </div>
+        <div class="accordion__item">
+          <h3><button class="accordion__trigger" type="button" aria-expanded="false" aria-controls="faq-6" id="faq-6-btn"><span>O gato ficou agitado na hora do manejo. O que fazer?</span><svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="accordion__panel" id="faq-6" role="region" aria-labelledby="faq-6-btn"><div><p>Pare e peça orientação ao veterinário. Evite perseguir o animal pela casa: prepare o ambiente antes de começar, faça movimentos calmos e nunca aperte o tórax ou dificulte a respiração.</p></div></div>
+        </div>
+      </div>
+      <p class="refs refs--center">Orientações gerais de manejo e prevenção fundamentadas nas diretrizes: Lloret et al. (2013); Gremião et al. (2021). <a href="#referencias">Ver lista</a></p>
+    </div>
+  </section>
+
+  <!-- ===== Aviso final ===== -->
+  <section class="final" id="aviso-final" aria-labelledby="final-titulo">
+    <div class="container final__grid">
+      <div>
+        <h2 id="final-titulo">Este guia não substitui o veterinário.</h2>
+        <p>O diagnóstico, a prescrição, o acompanhamento do tratamento e a definição das condutas para cada animal devem ser realizados pelo médico-veterinário.</p>
+        <a class="btn btn--light" href="#ajuda">QUANDO PROCURAR AJUDA</a>
+      </div>
+      <!-- Logo oficial da SporoCare (assets/logo/sporocare-app-logo.png), sobre cartão claro para manter o contraste no fundo escuro. -->
+      <figure class="final__logo">
+        <img src="assets/logo/sporocare-app-logo.png" width="1124" height="1227" loading="lazy" decoding="async" alt="Logo da SporoCare: cabeça de gato com um coração e uma cruz verde no centro, dentro de um círculo, com o nome SporoCare abaixo.">
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===== Quem nós somos ===== -->
+  <section class="section" id="quem-somos" aria-labelledby="quem-titulo">
+    <div class="container about">
+      <figure class="about__figure">
+        <img src="assets/photos/equipe-sporocare.jpg" width="1157" height="893" loading="lazy" decoding="async" alt="As seis integrantes da equipe SporoCare, sorrindo e lado a lado, diante de um painel assinado e de um arco de balões azuis e laranja.">
+        <figcaption class="credit">Equipe SporoCare.</figcaption>
+      </figure>
+      <div class="about__body">
+        <p class="eyebrow">Quem nós somos</p>
+        <h2 id="quem-titulo">A equipe por trás do SporoCare</h2>
+        <p class="topic__lead">A SporoCare é formada por seis alunas do sexto semestre de Medicina Veterinária da PUC-Campinas.</p>
+        <p>O site foi desenvolvido como parte de um projeto integrador, com o objetivo de oferecer informações educativas e apoio aos tutores de gatos durante o tratamento da esporotricose.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Seja nosso parceiro ===== -->
+  <section class="section section--tint" id="parceiros" aria-labelledby="parceiros-titulo">
+    <div class="container container--narrow partner">
+      <h2 id="parceiros-titulo">Seja nosso parceiro!</h2>
+      <p class="partner__text">Se você é tutor, profissional, instituição ou organização e quer conhecer ou apoiar o projeto educativo SporoCare, será um prazer conversar com você. Juntos, podemos levar informação acessível a mais famílias.</p>
+      <a class="btn btn--primary btn--whatsapp" href="https://wa.me/5519997660031?text=Ol%C3%A1%21%20Conheci%20o%20SporoCare%20pelo%20site%20e%20tenho%20interesse%20em%20saber%20mais%20sobre%20como%20me%20tornar%20parceiro%20do%20projeto.%20Poderiam%20me%20passar%20mais%20informa%C3%A7%C3%B5es%3F" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-chat"/></svg>QUERO SER PARCEIRO<span class="visually-hidden"> (abre o WhatsApp em nova aba)</span></a>
+    </div>
+  </section>
+
+  <!-- ===== Referências ===== -->
+  <section class="section section--tint" id="referencias" aria-labelledby="refs-titulo">
+    <div class="container container--narrow">
+      <header class="section__head">
+        <h2 id="refs-titulo">Referências científicas</h2>
+        <p class="section__sub">Fontes utilizadas na elaboração do guia</p>
+      </header>
+
+      <ol class="biblio">
+        <li>
+          <p>Gremião, I. D. F. et al. <em>Guideline for the management of feline sporotrichosis caused by Sporothrix brasiliensis and literature revision.</em> Brazilian Journal of Microbiology, 2021. DOI: <a href="https://doi.org/10.1007/s42770-020-00365-3" target="_blank" rel="noopener noreferrer">10.1007/s42770-020-00365-3</a>.</p>
+          <p class="biblio__links"><a href="https://pubmed.ncbi.nlm.nih.gov/32990922/" target="_blank" rel="noopener noreferrer">PubMed</a><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7966609/" target="_blank" rel="noopener noreferrer">Texto completo</a></p>
+        </li>
+        <li>
+          <p>Lloret, A. et al. <em>Sporotrichosis in cats: ABCD guidelines on prevention and management.</em> Journal of Feline Medicine and Surgery, 2013;15(7):619–623. DOI: <a href="https://doi.org/10.1177/1098612X13489225" target="_blank" rel="noopener noreferrer">10.1177/1098612X13489225</a>.</p>
+          <p class="biblio__links"><a href="https://pubmed.ncbi.nlm.nih.gov/23813827/" target="_blank" rel="noopener noreferrer">PubMed</a><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11148953/" target="_blank" rel="noopener noreferrer">Texto completo</a><a href="https://www.abcdcatsvets.org/guideline-for-sporotrichosis/" target="_blank" rel="noopener noreferrer">Diretrizes da ABCD</a></p>
+        </li>
+        <li>
+          <p>Montenegro, H. et al. <em>Feline sporotrichosis due to Sporothrix brasiliensis: an emerging animal infection in São Paulo, Brazil.</em> BMC Veterinary Research, 2014;10:269. DOI: <a href="https://doi.org/10.1186/s12917-014-0269-5" target="_blank" rel="noopener noreferrer">10.1186/s12917-014-0269-5</a>.</p>
+          <p class="biblio__links"><a href="https://pubmed.ncbi.nlm.nih.gov/25407096/" target="_blank" rel="noopener noreferrer">PubMed</a><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4244058/" target="_blank" rel="noopener noreferrer">Texto completo</a></p>
+        </li>
+        <li>
+          <p>Rodrigues, D. K. B.; Malta, E. D. V. M.; Ferro, L. O. <em>Análise do conhecimento sobre as principais zoonoses transmitidas por gatos.</em> Cadernos Ibero-Americanos de Direito Sanitário, 2017;6:742–752.</p>
+          <p class="biblio__links"><a href="https://www.cadernos.prodisa.fiocruz.br/index.php/cadernos/article/view/1140" target="_blank" rel="noopener noreferrer">Fiocruz</a></p>
+        </li>
+      </ol>
+
+      <h3 class="biblio__subtitle">Materiais institucionais complementares</h3>
+      <ol class="biblio" start="5">
+        <li>
+          <p><strong>CRMV-PR.</strong> Guia sobre esporotricose felina para a rotina clínica.</p>
+          <p class="biblio__links"><a href="https://crmv-pr.org.br/uploads/publicacao/arquivos/Esporotricose-Felina-Guia-para-a-Rotina-Clinica-05-09-24.pdf" target="_blank" rel="noopener noreferrer">Acessar o PDF</a></p>
+        </li>
+        <li>
+          <p><strong>CRMV-MG.</strong> Material informativo sobre esporotricose.</p>
+          <p class="biblio__links"><a href="https://crmvmg.gov.br/arquivos/ascom/esporo.pdf" target="_blank" rel="noopener noreferrer">Acessar o PDF</a></p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Rodapé ===== -->
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <a class="brand brand--footer" href="#inicio" aria-label="SporoCare — voltar ao início">
+      <span class="brand__crop"><img src="assets/logo/1.svg" alt="SporoCare" width="1500" height="1500" loading="lazy"></span>
+    </a>
+    <p class="site-footer__text">Guia educativo para tutores de gatos com esporotricose. Não substitui avaliação, prescrição ou acompanhamento do médico-veterinário.</p>
+    <p class="site-footer__small">© <span id="ano">2026</span> SporoCare · As seleções dos checklists ficam salvas apenas neste aparelho.</p>
+  </div>
+</footer>
+
+<button class="to-top" type="button" aria-label="Voltar ao topo" hidden>
+  <svg class="icon" aria-hidden="true"><use href="#i-up"/></svg>
+</button>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
