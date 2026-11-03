@@ -11,6 +11,8 @@ js/main.js             menu, checklists, acordeão, vídeos, espaços de foto
 assets/logo/1.svg      logo original (de SporoCare App Logo.zip), sem alterações
 assets/logo/sporocare-app-logo.png   logo oficial (PNG, fundo branco removido) exibida na parte final da página
 assets/img/            imagens originais, sem alterações (cópias idênticas byte a byte)
+assets/fonts/Otama-ep.otf   fonte dos títulos (Otama E.P.), carregada via @font-face em css/style.css
+assets/partners/hospital-e-o-bicho.webp   logo original do Hospital Veterinário É o Bicho (parceiro oficial)
 assets/photos/         coloque aqui suas fotografias reais
 ```
 
@@ -65,3 +67,7 @@ Não há envio para servidor nem sincronização entre aparelhos.
 - Respostas das perguntas frequentes: foram escritas somente com base nas orientações do briefing. Recomenda-se revisão por um médico-veterinário.
 - Referências 5 e 6 (CRMV-PR e CRMV-MG): os links foram preservados, mas os documentos não foram lidos nem usados para acrescentar orientações.
 - Fontes (Fraunces e Inter) e miniaturas dos vídeos são carregadas pela internet; sem conexão, o site usa fontes do sistema e a miniatura fica em branco.
+
+## Separação entre Parcerias e Referências
+
+A seção `#parceiros` usa fundo claro (`section--warm`) com filetes; `#referencias` usa o verde-claro (`section--tint`) com espaçamento próprio. Estilos no final de `css/style.css`.

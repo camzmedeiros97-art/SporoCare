@@ -129,6 +129,15 @@
     var panel = document.getElementById(btn.getAttribute('aria-controls'));
     btn.addEventListener('click', function () {
       var open = btn.getAttribute('aria-expanded') === 'true';
+      var group = btn.closest('[data-accordion]');
+      if (!open && group && group.hasAttribute('data-single')) {
+        $$('.accordion__trigger', group).forEach(function (other) {
+          if (other === btn) return;
+          other.setAttribute('aria-expanded', 'false');
+          var p = document.getElementById(other.getAttribute('aria-controls'));
+          if (p) p.classList.remove('is-open');
+        });
+      }
       btn.setAttribute('aria-expanded', String(!open));
       panel.classList.toggle('is-open', !open);
     });
@@ -172,6 +181,144 @@
       slot.classList.add('has-photo');
       slot.appendChild(img);
     });
+  });
+
+
+  /* ---------- Experiências interativas (sem armazenamento de dados) ---------- */
+  function setProgress(root, cur, total) {
+    $('[data-cur]', root).textContent = cur;
+    var bar = $('.xp__bar', root);
+    bar.setAttribute('aria-valuenow', String(cur));
+    $('[data-fill]', root).style.width = (cur / total * 100) + '%';
+  }
+  function focusIn(el) { if (el) { el.focus({ preventScroll: false }); } }
+
+  /* Prevenir também é cuidar */
+  $$('[data-xp]').forEach(function (root) {
+    var steps = $$('[data-step]', root);
+    var total = steps.length;
+    var back = $('[data-back]', root), next = $('[data-next]', root);
+    var nav = $('[data-nav]', root), end = $('[data-end]', root);
+    var top = $('.xp__top', root), body = $('.xp__body', root);
+    var answers = [];
+    var cur = 0;
+
+    function showTip(i) {
+      var step = steps[i], tip = $('.xstep__tip', step), tpl = $('.xstep__tipTpl', step);
+      tip.innerHTML = '';
+      tip.appendChild(tpl.content.cloneNode(true));
+    }
+    function render(focus) {
+      steps.forEach(function (s, i) { s.hidden = i !== cur; });
+      setProgress(root, cur + 1, total);
+      back.disabled = cur === 0;
+      next.disabled = answers[cur] == null;
+      if (focus) focusIn($('.xstep__title', steps[cur]));
+    }
+    steps.forEach(function (step, i) {
+      $$('.xopt__in', step).forEach(function (input) {
+        input.addEventListener('change', function () {
+          answers[i] = input.value;
+          $$('.xopt', step).forEach(function (l) { l.classList.toggle('is-selected', $('.xopt__in', l).checked); });
+          showTip(i);
+          if (i === cur) next.disabled = false;
+        });
+      });
+    });
+    back.addEventListener('click', function () { if (cur > 0) { cur--; render(true); } });
+    next.addEventListener('click', function () {
+      if (answers[cur] == null) return;
+      if (cur < total - 1) { cur++; render(true); }
+      else {
+        body.hidden = true; nav.hidden = true; top.hidden = true; end.hidden = false;
+        focusIn($('.xend__title', end));
+      }
+    });
+    $('[data-restart]', root).addEventListener('click', function () {
+      answers = []; cur = 0;
+      steps.forEach(function (s) {
+        $$('.xopt', s).forEach(function (l) { l.classList.remove('is-selected'); $('.xopt__in', l).checked = false; });
+        $('.xstep__tip', s).innerHTML = '';
+      });
+      end.hidden = true; body.hidden = false; nav.hidden = false; top.hidden = false;
+      render(true);
+    });
+    render(false);
+  });
+
+  /* Mitos ou verdades? */
+  $$('[data-quiz]').forEach(function (root) {
+    var cards = $$('[data-q]', root);
+    var total = cards.length;
+    var check = $('[data-check]', root), next = $('[data-next]', root);
+    var nav = $('[data-nav]', root), end = $('[data-end]', root);
+    var top = $('.xp__top', root), body = $('.xp__body', root);
+    var cur = 0, score = 0, choice = null, checked = false;
+    var messages = [
+      { min: 8, text: 'EXCELENTE! Você está muito bem informado!' },
+      { min: 5, text: 'MUITO BEM! Você já conhece bastante sobre o assunto.' },
+      { min: 0, text: 'APRENDER É O PRIMEIRO PASSO! Continue explorando o SporoCare.' }
+    ];
+    var ICON = function (id) { return '<svg class="icon" aria-hidden="true"><use href="#' + id + '"/></svg>'; };
+
+    function render(focus) {
+      cards.forEach(function (c, i) { c.hidden = i !== cur; });
+      setProgress(root, cur + 1, total);
+      choice = null; checked = false;
+      check.disabled = true; check.hidden = false; next.hidden = true;
+      next.textContent = cur === total - 1 ? 'VER RESULTADO' : 'PRÓXIMA PERGUNTA';
+      if (focus) focusIn($('.qcard__statement', cards[cur]));
+    }
+    cards.forEach(function (card) {
+      $$('.qchoice', card).forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (checked) return;
+          choice = btn.getAttribute('data-choice');
+          $$('.qchoice', card).forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+          check.disabled = false;
+        });
+      });
+    });
+    check.addEventListener('click', function () {
+      if (checked || choice == null) return;
+      checked = true;
+      var card = cards[cur], answer = card.getAttribute('data-answer'), ok = choice === answer;
+      if (ok) score++;
+      $$('.qchoice', card).forEach(function (b) {
+        var v = b.getAttribute('data-choice');
+        b.disabled = true;
+        if (v === answer) b.classList.add('is-right');
+        else if (v === choice) b.classList.add('is-wrong');
+      });
+      var fb = $('.qfeedback', card);
+      var expl = $('.qfeedback__tpl', card).innerHTML;
+      fb.innerHTML = '<div class="qfeedback__box' + (ok ? '' : ' qfeedback__box--wrong') + '">' +
+        '<p class="qfeedback__head">' + (ok ? ICON('i-check') + 'Você acertou!' : ICON('i-x') + 'Não foi dessa vez.') + '</p>' +
+        '<p>A resposta correta é: <strong>' + (answer === 'mito' ? 'MITO' : 'VERDADE') + '</strong>.</p>' + expl + '</div>';
+      check.hidden = true; next.hidden = false; next.focus();
+    });
+    next.addEventListener('click', function () {
+      if (!checked) return;
+      if (cur < total - 1) { cur++; render(true); }
+      else {
+        $('[data-score]', end).textContent = score;
+        $('[data-total2]', end).textContent = total;
+        var msg = messages.filter(function (m) { return score >= m.min; })[0];
+        $('[data-result]', end).textContent = msg.text;
+        body.hidden = true; nav.hidden = true; top.hidden = true; end.hidden = false;
+        focusIn($('.xend__title', end));
+      }
+    });
+    $('[data-restart]', root).addEventListener('click', function () {
+      cur = 0; score = 0;
+      cards.forEach(function (c) {
+        $$('.qchoice', c).forEach(function (b) { b.disabled = false; b.setAttribute('aria-pressed', 'false'); b.classList.remove('is-right', 'is-wrong'); });
+        $('.qfeedback', c).innerHTML = '';
+      });
+      end.hidden = true; body.hidden = false; nav.hidden = false; top.hidden = false;
+      render(true);
+    });
+    render(false);
   });
 
   /* ---------- Ano no rodapé ---------- */

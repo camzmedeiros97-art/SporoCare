@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img" aria-labelledby="t d">
+  <title id="t">Gato entre símbolos de verdade e mito</title>
+  <desc id="d">Ilustração delicada de um gato observando dois balões, um com sinal de verificação e outro com um X.</desc>
+  <circle cx="200" cy="200" r="190" fill="#efe6d6"/>
+  <circle cx="200" cy="200" r="190" fill="none" stroke="#e2d6c1" stroke-width="2"/>
+  <ellipse cx="200" cy="338" rx="120" ry="14" fill="#e2d6c1"/>
+  <!-- balões -->
+  <g><circle cx="106" cy="118" r="46" fill="#e8f0e6" stroke="#79a87c" stroke-width="3"/><path d="M84 118 l16 16 l30 -34" fill="none" stroke="#2f5a47" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M130 156 l14 22 l-30 -12Z" fill="#e8f0e6" stroke="#79a87c" stroke-width="3" stroke-linejoin="round"/></g>
+  <g><circle cx="294" cy="118" r="46" fill="#f8e7df" stroke="#c0654a" stroke-width="3"/><path d="M274 98 l40 40 M314 98 l-40 40" fill="none" stroke="#9c4129" stroke-width="8" stroke-linecap="round"/>
+  <path d="M270 156 l-14 22 l30 -12Z" fill="#f8e7df" stroke="#c0654a" stroke-width="3" stroke-linejoin="round"/></g>
+  <!-- gato -->
+  <path d="M200 206 C150 206 138 262 140 304 C142 330 168 340 200 340 C232 340 258 330 260 304 C262 262 250 206 200 206Z" fill="#1d3a30"/>
+  <path d="M152 188 L158 140 L190 164 C196 163 204 163 210 164 L242 140 L248 188 C254 200 254 218 244 230 C232 246 168 246 156 230 C146 218 146 200 152 188Z" fill="#1d3a30"/>
+  <path d="M164 156 L186 172 L168 180Z M236 156 L214 172 L232 180Z" fill="#79a87c" opacity=".55"/>
+  <ellipse cx="182" cy="206" rx="5" ry="7" fill="#b9d3ba"/><ellipse cx="218" cy="206" rx="5" ry="7" fill="#b9d3ba"/>
+  <path d="M194 220 L206 220 L200 228Z" fill="#79a87c"/>
+  <path d="M200 318 C172 300 172 276 190 274 C195 274 199 277 200 282 C201 277 205 274 210 274 C228 276 228 300 200 318Z" fill="#79a87c"/>
+  <path d="M252 330 C312 334 330 296 304 270" fill="none" stroke="#1d3a30" stroke-width="14" stroke-linecap="round"/>
+</svg>
