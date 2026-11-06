@@ -1,4 +1,14 @@
 /* SporoCare — comportamento da página (JavaScript puro, sem dependências) */
+ // Exibe o aviso ao abrir o site; fecha pelo botão, clique fora ou tecla Esc.
+  (() => {
+    const modal = document.getElementById("aviso-modal");
+    if (!modal) return;
+    const fechar = () => modal.close();
+    modal.querySelectorAll("[data-fechar-aviso]").forEach((button) => button.addEventListener("click", fechar));
+    modal.addEventListener("click", (event) => { if (event.target === modal) fechar(); });
+    if (typeof modal.showModal === "function") modal.showModal();
+    else modal.setAttribute("open", "");
+  })();
 (function () {
   'use strict';
 

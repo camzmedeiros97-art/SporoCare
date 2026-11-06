@@ -26,8 +26,8 @@
   --ink-soft:  #55645c;
 
   /* Tipografia */
-  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
-  --font-title: "Otama E.P.", "Fraunces", Georgia, serif;
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, sans-serif;
+  --font-title: "Otama E.P.", "Fraunces", Georgia, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   /* Espaçamento */
@@ -153,7 +153,7 @@ a:hover { color: var(--green-900); }
 .badge { display: inline-flex; align-items: center; gap: .5rem; padding: .4rem .9rem; border-radius: 999px; background: var(--sage-100); color: var(--green-700); font-size: .85rem; font-weight: 600; margin-bottom: var(--space-3); }
 
 /* Por que existe */
-.why { display: grid; grid-template-columns: 1.2fr .8fr; gap: var(--space-5); align-items: center; }
+.why { display: grid; align-items: center; justify-content: center; }
 .why__body { font-size: 1.2rem; line-height: 1.7; max-width: 56ch; }
 .source { font-size: .9rem; color: var(--ink-soft); border-top: 1px solid var(--beige-300); padding-top: var(--space-2); margin-top: var(--space-3); max-width: 56ch; }
 @media (max-width: 860px) { .why { grid-template-columns: 1fr; gap: var(--space-4); } }
@@ -477,9 +477,9 @@ a:hover { color: var(--green-900); }
 /* Conheça o SporoCare (coluna institucional, abaixo do aviso) */
 .why__about { margin-top: var(--space-5); padding-top: var(--space-4); border-top: 1px solid var(--beige-300); max-width: 56ch; }
 .why__eyebrow { margin: 0 0 .6rem; font: 600 .72rem/1 var(--font-body); letter-spacing: .18em; color: var(--green-700); }
-.why__about-title { margin: 0; font-size: clamp(1.25rem, 2.2vw, 1.55rem); line-height: 1.15; }
+.why__about-title { margin: 0; font-size: clamp(1.85rem, 2.2vw, 1.85rem); line-height: 1.15; }
 .why__about .why__subtitle { margin-top: var(--space-1); }
-.why__about-text { margin: var(--space-2) 0 0; font-size: 1rem; line-height: 1.7; }
+.why__about-text { margin: var(--space-2) 0 0; font-size: 0.99rem; line-height: 1.7; }
 .why__highlight { margin: var(--space-3) 0 0; padding-left: var(--space-2); border-left: 3px solid var(--sage-500); font: 500 1.15rem/1.4 var(--font-display); color: var(--green-900); }
 /* Títulos dos vídeos: exibidos exatamente como no YouTube */
 .video__meta h4 { text-transform: none; }
@@ -628,3 +628,39 @@ a:hover { color: var(--green-900); }
 .section--partners { border-top: 1px solid var(--beige-300); border-bottom: 1px solid var(--sage-300); padding-bottom: var(--space-6); }
 .section--refs { padding-top: calc(var(--space-6) + var(--space-2)); }
 @media (max-width: 860px) { .section--refs { padding-top: calc(var(--space-5) + var(--space-2)); } }
+
+
+/* ===== Popup do aviso importante ===== */
+.notice-modal {
+  width: min(92vw, 620px); max-width: 620px; max-height: min(88vh, 720px);
+  padding: 0; border: 0; border-radius: var(--radius-lg); background: transparent;
+  color: var(--ink); overflow: visible;
+}
+.notice-modal::backdrop {
+  background: rgba(20, 35, 28, .66); -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px); animation: notice-backdrop-in .22s ease-out;
+}
+.notice-modal[open] { animation: notice-modal-in .28s var(--ease) both; }
+.notice-modal__content {
+  position: relative; padding: clamp(1.5rem, 4vw, 2.5rem); gap: 1rem;
+  align-items: flex-start; box-shadow: 0 24px 70px rgba(16, 34, 25, .24);
+}
+.notice-modal__text { min-width: 0; }
+.notice-modal__close {
+  position: absolute; top: .8rem; right: .8rem; display: grid; place-items: center;
+  width: 42px; height: 42px; border: 1px solid #ecd0c3; border-radius: 50%;
+  background: var(--warm-white); color: var(--terracotta-700); cursor: pointer;
+}
+.notice-modal__close:hover { background: #fff; }
+.notice-modal__close .icon { width: 1.25rem; height: 1.25rem; }
+.notice-modal .notice__title { font-size: clamp(1.25rem, 3vw, 1.6rem); margin: .1rem 2rem .65rem 0; }
+.notice-modal__text p { line-height: 1.65; }
+.notice-modal__button { margin-top: .75rem; min-width: 140px; }
+@keyframes notice-modal-in { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes notice-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+@media (max-width: 480px) {
+  .notice-modal__content { gap: .75rem; padding: 1.5rem 1.25rem; }
+  .notice-modal__content > .notice__icon { width: 22px; height: 22px; }
+  .notice-modal__button { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .notice-modal[open], .notice-modal::backdrop { animation: none; } }

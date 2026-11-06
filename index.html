@@ -98,16 +98,20 @@
     </div>
   </section>
 
-  <!-- ===== Aviso importante ===== -->
-  <div class="container">
-    <aside class="notice" aria-labelledby="aviso-titulo">
+  <!-- ===== Aviso importante em popup ===== -->
+  <dialog class="notice-modal" id="aviso-modal" aria-labelledby="aviso-titulo" aria-describedby="aviso-texto">
+    <div class="notice notice-modal__content">
+      <button class="notice-modal__close" type="button" aria-label="Fechar aviso" data-fechar-aviso>
+        <svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>
+      </button>
       <svg class="icon notice__icon" aria-hidden="true"><use href="#i-info"/></svg>
-      <div>
-        <h2 class="notice__title" id="aviso-titulo">Importante</h2>
-        <p>Este guia tem finalidade educativa e não substitui avaliação, prescrição ou acompanhamento do médico-veterinário. Não altere doses, medicamentos, curativos ou tempo de isolamento sem orientação profissional.</p>
+      <div class="notice-modal__text">
+        <h2 class="notice__title" id="aviso-titulo">Aviso importante</h2>
+        <p id="aviso-texto">Este guia tem finalidade educativa e não substitui avaliação, prescrição ou acompanhamento do médico-veterinário. Não altere doses, medicamentos, curativos ou tempo de isolamento sem orientação profissional.</p>
+        <button class="btn btn--primary notice-modal__button" type="button" data-fechar-aviso>Entendi</button>
       </div>
-    </aside>
-  </div>
+    </div>
+  </dialog>
 
   <!-- ===== Por que este guia existe ===== -->
   <section class="section" id="por-que" aria-labelledby="por-que-titulo">
@@ -119,48 +123,10 @@
 <p class="why__body">O SporoCare reúne informações científicas em orientações simples e acessíveis para ajudar você a compreender a doença e cuidar do seu gato com mais segurança.</p>
 <p class="why__disclaimer">Conteúdo educativo baseado em fontes científicas. Não substitui a avaliação veterinária.</p>
 
-<div class="why__about">
-<p class="why__eyebrow">SOBRE NÓS</p>
-<h3 class="why__about-title">Conheça o SporoCare</h3>
-<p class="why__subtitle">Um projeto que conecta saúde animal, humana e ambiental.</p>
-<p class="why__about-text">O SporoCare nasceu da importância de olhar para a esporotricose além da doença, reconhecendo sua relação com a saúde pública e o ambiente em que vivemos.</p>
-<p class="why__about-text">Inspirado no conceito de Saúde Única (One Health), o projeto busca aproximar a medicina veterinária da comunidade, valorizando a informação, a responsabilidade coletiva e o bem-estar de todos.</p>
-<p class="why__highlight">Uma só saúde. Um compromisso de todos.</p>
-</div>
+
 </div>
 
-<!-- Notícias sobre esporotricose (links externos; sem imagens de terceiros) -->
-      <aside class="news" aria-labelledby="noticias-titulo">
-        <h3 class="news__title" id="noticias-titulo">Esporotricose nas notícias</h3>
-        <p class="news__sub">Reportagens sobre o tema em Campinas e região, da mais recente para a mais antiga.</p>
-        <article class="news-item">
-          <div class="news-item__text">
-            <p class="news-item__source"><span class="news-item__icon news-item__icon--td" aria-hidden="true">TD</span>TODODIA</p>
-            <h4 class="news-item__title"><a href="https://tododia.com.br/cidades/sumare/sumare-capacita-agentes-apos-confirmar-tres-casos-humanos-de-esporotricose-em-2026/" target="_blank" rel="noopener noreferrer">Sumaré capacita agentes após confirmar três casos humanos de esporotricose em 2026<span class="visually-hidden"> (abre em nova aba)</span></a></h4>
-            <p class="news-item__summary">Treinamento reuniu mais de 30 profissionais e abordou prevenção, diagnóstico e tratamento da doença em pessoas e animais.</p>
-            <p class="news-item__date"><time datetime="2026-09-28">28 de set. de 2026</time> · Vagner Salustiano · Foto: Prefeitura de Foz do Iguaçu</p>
-          </div>
-          <a class="news-item__thumb" href="https://tododia.com.br/cidades/sumare/sumare-capacita-agentes-apos-confirmar-tres-casos-humanos-de-esporotricose-em-2026/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><img src="assets/images/noticias/tododia-capacitacao-2026.png" width="84" height="84" loading="lazy" decoding="async" alt="Gato com esporotricose, foto da Prefeitura de Foz do Iguaçu usada pela reportagem."></a>
-        </article>
-        <article class="news-item">
-          <div class="news-item__text">
-            <p class="news-item__source"><span class="news-item__icon news-item__icon--g1" aria-hidden="true">g1</span>G1 Campinas e região</p>
-            <h4 class="news-item__title"><a href="https://g1.globo.com/sp/campinas-regiao/noticia/2026/08/08/sumare-concentra-metade-dos-casos-de-esporotricose-na-regiao-de-campinas-em-2026-veja-sintomas-e-como-prevenir.ghtml" target="_blank" rel="noopener noreferrer">Sumaré concentra metade dos casos de esporotricose na região de Campinas em 2026; veja sintomas e como prevenir<span class="visually-hidden"> (abre em nova aba)</span></a></h4>
-            <p class="news-item__summary">Sumaré registra três dos seis casos de esporotricose na região de Campinas em 2026. A doença é transmitida por gatos e causa feridas na pele.</p>
-            <p class="news-item__date"><time datetime="2026-08-08">8 de ago. de 2026</time></p>
-          </div>
-          <a class="news-item__thumb" href="https://g1.globo.com/sp/campinas-regiao/noticia/2026/08/08/sumare-concentra-metade-dos-casos-de-esporotricose-na-regiao-de-campinas-em-2026-veja-sintomas-e-como-prevenir.ghtml" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><img src="assets/images/noticias/g1-sumare-2026.png" width="84" height="84" loading="lazy" decoding="async" alt="Gato preto e branco entre a vegetação, imagem de destaque da reportagem."></a>
-        </article>
-        <article class="news-item">
-          <div class="news-item__text">
-            <p class="news-item__source"><span class="news-item__icon news-item__icon--g1" aria-hidden="true">g1</span>G1 Campinas e região</p>
-            <h4 class="news-item__title"><a href="https://g1.globo.com/sp/campinas-regiao/noticia/2023/11/24/campinas-tem-alta-de-esporotricose-em-gatos-entenda-por-que-felinos-sao-vitimas-e-como-protege-los.ghtml" target="_blank" rel="noopener noreferrer">Campinas tem alta de esporotricose em gatos: entenda por que felinos são vítimas e como protegê-los<span class="visually-hidden"> (abre em nova aba)</span></a></h4>
-            <p class="news-item__summary">Segundo a reportagem, Campinas notificou 58 casos em gatos naquele ano, quase dez vezes mais que no ano anterior. A coordenadora da zoonose também faz um alerta.</p>
-            <p class="news-item__date"><time datetime="2023-11-24">24 de nov. de 2023</time></p>
-          </div>
-          <a class="news-item__thumb" href="https://g1.globo.com/sp/campinas-regiao/noticia/2023/11/24/campinas-tem-alta-de-esporotricose-em-gatos-entenda-por-que-felinos-sao-vitimas-e-como-protege-los.ghtml" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><img src="assets/images/noticias/g1-campinas-2023.png" width="84" height="84" loading="lazy" decoding="async" alt="Gato rajado recebendo um carinho na cabeça, imagem de destaque da reportagem."></a>
-        </article>
-      </aside>
+
     </div>
   </section>
 
@@ -768,6 +734,44 @@
     </div>
   </section>
 
+  <!-- ===== Notícias sobre esporotricose (links externos; sem imagens de terceiros) ===== -->
+  <section class="section section--tint" id="noticias" aria-labelledby="noticias-titulo">
+    <div class="container container--narrow">
+      <!-- Notícias sobre esporotricose (links externos; sem imagens de terceiros) -->
+      <aside class="news" aria-labelledby="noticias-titulo">
+        <h3 class="news__title" id="noticias-titulo">Esporotricose nas notícias</h3>
+        <p class="news__sub">Reportagens sobre o tema em Campinas e região, da mais recente para a mais antiga.</p>
+        <article class="news-item">
+          <div class="news-item__text">
+            <p class="news-item__source"><span class="news-item__icon news-item__icon--td" aria-hidden="true">TD</span>TODODIA</p>
+            <h4 class="news-item__title"><a href="https://tododia.com.br/cidades/sumare/sumare-capacita-agentes-apos-confirmar-tres-casos-humanos-de-esporotricose-em-2026/" target="_blank" rel="noopener noreferrer">Sumaré capacita agentes após confirmar três casos humanos de esporotricose em 2026<span class="visually-hidden"> (abre em nova aba)</span></a></h4>
+            <p class="news-item__summary">Treinamento reuniu mais de 30 profissionais e abordou prevenção, diagnóstico e tratamento da doença em pessoas e animais.</p>
+            <p class="news-item__date"><time datetime="2026-09-28">28 de set. de 2026</time> · Vagner Salustiano · Foto: Prefeitura de Foz do Iguaçu</p>
+          </div>
+          <a class="news-item__thumb" href="https://tododia.com.br/cidades/sumare/sumare-capacita-agentes-apos-confirmar-tres-casos-humanos-de-esporotricose-em-2026/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><img src="assets/images/noticias/tododia-capacitacao-2026.png" width="84" height="84" loading="lazy" decoding="async" alt="Gato com esporotricose, foto da Prefeitura de Foz do Iguaçu usada pela reportagem."></a>
+        </article>
+        <article class="news-item">
+          <div class="news-item__text">
+            <p class="news-item__source"><span class="news-item__icon news-item__icon--g1" aria-hidden="true">g1</span>G1 Campinas e região</p>
+            <h4 class="news-item__title"><a href="https://g1.globo.com/sp/campinas-regiao/noticia/2026/08/08/sumare-concentra-metade-dos-casos-de-esporotricose-na-regiao-de-campinas-em-2026-veja-sintomas-e-como-prevenir.ghtml" target="_blank" rel="noopener noreferrer">Sumaré concentra metade dos casos de esporotricose na região de Campinas em 2026; veja sintomas e como prevenir<span class="visually-hidden"> (abre em nova aba)</span></a></h4>
+            <p class="news-item__summary">Sumaré registra três dos seis casos de esporotricose na região de Campinas em 2026. A doença é transmitida por gatos e causa feridas na pele.</p>
+            <p class="news-item__date"><time datetime="2026-08-08">8 de ago. de 2026</time></p>
+          </div>
+          <a class="news-item__thumb" href="https://g1.globo.com/sp/campinas-regiao/noticia/2026/08/08/sumare-concentra-metade-dos-casos-de-esporotricose-na-regiao-de-campinas-em-2026-veja-sintomas-e-como-prevenir.ghtml" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><img src="assets/images/noticias/g1-sumare-2026.png" width="84" height="84" loading="lazy" decoding="async" alt="Gato preto e branco entre a vegetação, imagem de destaque da reportagem."></a>
+        </article>
+        <article class="news-item">
+          <div class="news-item__text">
+            <p class="news-item__source"><span class="news-item__icon news-item__icon--g1" aria-hidden="true">g1</span>G1 Campinas e região</p>
+            <h4 class="news-item__title"><a href="https://g1.globo.com/sp/campinas-regiao/noticia/2023/11/24/campinas-tem-alta-de-esporotricose-em-gatos-entenda-por-que-felinos-sao-vitimas-e-como-protege-los.ghtml" target="_blank" rel="noopener noreferrer">Campinas tem alta de esporotricose em gatos: entenda por que felinos são vítimas e como protegê-los<span class="visually-hidden"> (abre em nova aba)</span></a></h4>
+            <p class="news-item__summary">Segundo a reportagem, Campinas notificou 58 casos em gatos naquele ano, quase dez vezes mais que no ano anterior. A coordenadora da zoonose também faz um alerta.</p>
+            <p class="news-item__date"><time datetime="2023-11-24">24 de nov. de 2023</time></p>
+          </div>
+          <a class="news-item__thumb" href="https://g1.globo.com/sp/campinas-regiao/noticia/2023/11/24/campinas-tem-alta-de-esporotricose-em-gatos-entenda-por-que-felinos-sao-vitimas-e-como-protege-los.ghtml" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true"><img src="assets/images/noticias/g1-campinas-2023.png" width="84" height="84" loading="lazy" decoding="async" alt="Gato rajado recebendo um carinho na cabeça, imagem de destaque da reportagem."></a>
+        </article>
+      </aside>
+    </div>
+  </section>
+
   <!-- ===== Aviso final ===== -->
   <section class="final" id="aviso-final" aria-labelledby="final-titulo">
     <div class="container final__grid">
@@ -792,9 +796,15 @@
       </figure>
       <div class="about__body">
         <p class="eyebrow">Quem nós somos</p>
-        <h2 id="quem-titulo">A equipe por trás do SporoCare</h2>
-        <p class="topic__lead">A SporoCare é formada por seis alunas do sexto semestre de Medicina Veterinária da PUC-Campinas.</p>
-        <p>O site foi desenvolvido como parte de um projeto integrador, com o objetivo de oferecer informações educativas e apoio aos tutores de gatos durante o tratamento da esporotricose.</p>
+        <h3 id="why__about-title">A equipe por trás do SporoCare</h3>
+        <p class="why__subtitle">Um projeto que conecta saúde animal, humana e ambiental.</p>
+        <p class="why__about-text">O SporoCare nasceu da importância de olhar para a esporotricose além da doença, reconhecendo sua relação com a saúde pública e o ambiente em que vivemos.</p>
+        <p class="why__about-text">Inspirado no conceito de Saúde Única (One Health), o projeto busca aproximar a medicina veterinária da comunidade, valorizando a informação, a responsabilidade coletiva e o bem-estar de todos.</p>
+        
+        <p class="why__about-text">A SporoCare é formada por seis alunas do sexto semestre de Medicina Veterinária da PUC-Campinas.</p>
+        <p class="why__about-text">O site foi desenvolvido como parte de um projeto integrador, com o objetivo de oferecer informações educativas e apoio aos tutores de gatos durante o tratamento da esporotricose.</p>
+          
+        </div>
       </div>
     </div>
   </section>
